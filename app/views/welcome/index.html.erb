@@ -1,4 +1,23 @@
-<h1>All Posts</h1>
-<% @posts.each do |post| %>
-<%= link_to post.title, post_url(post) %>
-<% end %>
+<div class="hero-unit">
+  <h1>Bloccit</h1>
+  <p>Bloccit is a resource for sharing links with your friends!</p>
+  <p>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary btn-large' %> or 
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-large' %> today!
+  </p>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <h2>Make yourself sound cool</h2>
+    <p>Post awesome links and pretend to be someone else submitting them, so that you get more upvotes.</p>
+  </div>
+  <div class="span4">
+    <h2>Hot chicks get clicks</h2>
+    <p>Whenever you post an image, be sure to include a face/cleavage shot of a hot girl in the thumbnail. This will ensure that the maximum number of views.</p>
+  </div>
+  <div class="span4">
+    <h2>Don't be a republican</h2>
+    <p>Everyone knows that conservatives don't use the internet. Try to keep your politically-sensetive posts on the left side of the political spectrum. For maximum upvotes, downsize private industry and focus on the shortcomings of the modern American political system.</p>
+  </div>
+</div>
