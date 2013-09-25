@@ -46,6 +46,8 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 
 gem 'devise'
 
+gem 'cancan'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
