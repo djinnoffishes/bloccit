@@ -25,17 +25,19 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find(post_params)
+    authorize! :edit, @post, message: "You need to own the post to edit it."
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find(post_params)
+    authorize! :update, @post, message: "You need to own the post to edit it."
     if @post.update_attributes(post_params)
       flash[:notice] = "Post was updated."
       redirect_to @post
     else
       flash[:error] = "There was an error saving the post. Please try again."
-      render :new
+      render :edit
     end
   end
 
