@@ -44,7 +44,7 @@ end
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 
-gem 'devise'
+gem 'devise', github: 'plataformatec/devise', branch: 'master'
 
 gem 'cancan'
 

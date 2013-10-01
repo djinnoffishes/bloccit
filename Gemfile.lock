@@ -6,6 +6,18 @@ GIT
       railties (>= 3.0)
       sass (>= 3.2)
 
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: c323065b57277e175af21a693a115c55f98936e6
+  branch: master
+  specs:
+    devise (3.1.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -50,11 +62,6 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     daemons (1.1.9)
-    devise (3.0.0)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      warden (~> 1.2.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.25.3)
@@ -169,7 +176,7 @@ DEPENDENCIES
   cancan
   carrierwave
   coffee-rails (~> 4.0.0)
-  devise
+  devise!
   faker
   figaro
   fog
