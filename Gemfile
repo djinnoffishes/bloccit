@@ -63,6 +63,9 @@ gem 'figaro'
 # gem for Rails 3, Rails 4, Sinatra, and Merb
 gem 'will_paginate', '~> 3.0'
 
+# so that bootstrap uses the right classes for will_paginate
+gem 'will_paginate-bootstrap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
