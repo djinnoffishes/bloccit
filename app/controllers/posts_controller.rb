@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @topic = Topic.find(params[:topic_id])
+    @comments = Comment.find_by_post_id(@post)
   end
 
   def new

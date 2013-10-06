@@ -12,6 +12,8 @@
       <%= image_tag(@post.image) if @post.image? %>
     </large>
   </div>
+  <%= render partial: "comments", collection: @comments %>
+  <%= render "comments/form" %>
   <div class="col-md-4">
     <% if can? :edit, @post %>
       <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-large btn-block' %>

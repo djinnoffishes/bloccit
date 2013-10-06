@@ -1,0 +1,8 @@
+<%= @comments.each do |c|%>
+  <p class="lead">
+    <%= c.user_id %> said 
+  </p>
+  <p>
+    <%= c.body %>
+  </p>
+<% end %>
