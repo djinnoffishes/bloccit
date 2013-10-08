@@ -66,6 +66,10 @@ gem 'will_paginate', '~> 3.0'
 # so that bootstrap uses the right classes for will_paginate
 gem 'will_paginate-bootstrap'
 
+# OAuth for Facebook login
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
