@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
   # Handling for CanCan denied access
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
-  end  
+  end
+
+  def after_sign_in_path_for(resource)
+    topics_path
+  end
 
   protected
     def configure_permitted_parameters
