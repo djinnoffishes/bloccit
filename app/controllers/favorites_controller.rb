@@ -5,7 +5,8 @@ class FavoritesController < ApplicationController
     @post = @topic.posts.find(params[:post_id])
 
     authorize! :create, Favorite, message: "You cannot do that"
-    if current_user.favorites.create(post: @post)
+    add_favorite = current_user.favorites.create(post: @post)
+    if add_favorite.save
       flash[:notice] = "Favorited post"
       redirect_to [@topic, @post]
     else
@@ -28,11 +29,4 @@ class FavoritesController < ApplicationController
       redirect_to [@topic, @post]
     end
   end
-
-# do we even need to do this?
-#  private
-#    def fav_params
-#      params.require(:favorite).permit(:post)
-#    end
-
 end
