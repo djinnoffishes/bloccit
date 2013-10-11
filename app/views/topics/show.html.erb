@@ -1,4 +1,4 @@
-<h1><%= @topic.name %></h1>
+<h2><%= @topic.name %></h2>
 
 <% if can? :update, @topic %>
   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-primary btn-mini' %>
