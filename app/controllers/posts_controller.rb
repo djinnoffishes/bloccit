@@ -2,8 +2,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    authorize! :read, @topic, message: "You need to be signed-in to do that."
     @topic = Topic.find(params[:topic_id])
+    authorize! :read, @topic, message: "You need to be signed-in to do that."
     @comments = Comment.find_all_by_post_id(@post)
     @comment = @post.comments.new
   end
