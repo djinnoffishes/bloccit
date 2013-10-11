@@ -7,12 +7,12 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
 
-    if @comment.save!
+    if @comment.save
       flash[:notice] = "Comment added."
       redirect_to topic_post_path(@comment.post.topic, @comment.post)
     else
       flash[:error] = "There was an error saving the comment. Please try again."
-      redirect_to topic_post_path(@comment.post.topic, @comment.post)
+      redirect_to [@topic, @post]
     end
   end
   

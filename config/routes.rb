@@ -12,6 +12,7 @@ Bloccit::Application.routes.draw do
   end
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
+  resources :users, only: [:show]
   match 'about' => 'welcome#about', via: :get
   root to: 'welcome#index'
 
