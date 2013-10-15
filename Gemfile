@@ -8,8 +8,11 @@ group :production do
   gem 'pg'
 end
 
-group :development do
+group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
 end
 
 # Use SCSS for stylesheets
