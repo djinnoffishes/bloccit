@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   protected
     def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_up) << :avatar << :provider << :uid << :email_favorites
+      devise_parameter_sanitizer.for(:sign_up) << :name << :avatar << :provider << :uid << :email_favorites
       devise_parameter_sanitizer.for(:account_update) << :name << :avatar << :password << :email_favorites
     end
 

@@ -20,11 +20,19 @@
   </div>
 </div>
  
-<div class="row">
-  <div class="col-md-8">
-    <h2> New Comment </h2>
-    <%= render "comments/form" %>
+<% if can? :create, Comment %>
+  <hr/>
+  <a href="#" class="js-add-comment">Add Comment</a>
+  <br/>
+  <div class="js-new-comment hide">
+    <div class="col-md-8">
+      <h4> New Comment </h4>
+      <%= render "comments/form" %>
+    </div>
   </div>
+<% end %>
+
+<div class="row">
  
   <div class="col-md-4">
     <% if can? :edit, @post %>

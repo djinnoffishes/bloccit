@@ -30,3 +30,14 @@
 //= require twitter/bootstrap/collapse
 //= require twitter/bootstrap/carousel
 //= require twitter/bootstrap/affix
+
+.hide {
+  display: none;
+}
+
+$(document).ready(function() {
+  $(".js-add-comment").click(function() {
+    $(".js-new-comment").slideDown();
+    return false;
+  });
+});
