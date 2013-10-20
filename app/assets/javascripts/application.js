@@ -31,13 +31,16 @@
 //= require twitter/bootstrap/carousel
 //= require twitter/bootstrap/affix
 
-.hide {
-  display: none;
-}
-
-$(document).ready(function() {
+$(document).on("page:load ready",function(){
+  $(".row").fadeIn();
   $(".js-add-comment").click(function() {
-    $(".js-new-comment").slideDown();
+    var selector = "." + $(this).attr('data-selector');
+    if ($(selector).is(":visible")) {
+      $(selector).slideUp();
+    }
+    else {
+      $(selector).slideDown();
+    }
     return false;
   });
 });
