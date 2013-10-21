@@ -8,14 +8,22 @@ class CommentsController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
+    @comments = @post.comments
+
+    @comment.post = @post
     @comment = current_user.comments.build(comment_params)
+    @new_comment = Comment.new
+    
+    authorize! :create, @comment, message: "You need be signed in to do that."
 
     if @comment.save
       flash[:notice] = "Comment added."
-      redirect_to topic_post_path(@comment.post.topic, @comment.post)
     else
       flash[:error] = "There was an error saving the comment. Please try again."
-      redirect_to [@topic, @post]
+    end
+
+    respond_with(@comment) do |f|
+      f.html { redirect_to [@topic, @post] }
     end
   end
   
