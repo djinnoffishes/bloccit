@@ -10,8 +10,8 @@ class CommentsController < ApplicationController
     @post = @topic.posts.find(params[:post_id])
     @comments = @post.comments
 
-    @comment.post = @post
     @comment = current_user.comments.build(comment_params)
+    @comment.post = @post
     @new_comment = Comment.new
     
     authorize! :create, @comment, message: "You need be signed in to do that."
